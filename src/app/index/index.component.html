@@ -1,0 +1,23 @@
+<div>
+  <h1>Criar Conta</h1>
+  <label for="email">E-mail</label>
+  <input type="text" name="email" id="email" [(ngModel)]="email">
+  <label for="senha">Senha</label>
+  <input type="password" name="senha" id="senha" [(ngModel)]="senha">
+  <button (click)="criarConta()" >Criar Conta</button>
+  <button (click)="esqueciMinhaSenha()" >Esqueci minha senha</button>
+</div>
+
+<div>
+  <h1>Logar</h1>
+  <button (click)="logarComGoogle()" >Logar com Gmail</button>
+  <button (click)="logarComGithub()" >Logar com Github</button>
+  <button (click)="logarComFace()" >Logar com Face</button>
+  <label for="login">E-mail</label>
+  <input type="text" name="login" id="login" [(ngModel)]="login">
+  <label for="password">Senha</label>
+  <input type="password" name="password" id="password" [(ngModel)]="password">
+  <button (click)="logarComUsuarioCadastrado()">Logar com Usuário Cadastrado</button>
+  <button (click)="resetarSenha()">Resetar Senha</button>
+</div>
+
