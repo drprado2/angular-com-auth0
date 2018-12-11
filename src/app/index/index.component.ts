@@ -38,8 +38,7 @@ export class IndexComponent implements OnInit {
       connection: 'email',
       send: 'link',
       email: 'drprado2@gmail.com',
-      redirectUri: 'http://localhost:4200/callback',
-      scope: 'openid profile email user_id'
+      redirectUri: 'http://localhost:4200/callback'
     }, function (err, res) {
       // handle errors or continue
       if (err) {
@@ -55,8 +54,9 @@ export class IndexComponent implements OnInit {
       domain:       'adri-oauth-test.auth0.com',
       clientID:     '4x7QExL8Wa91ruGHeCrxvZ2XczFmoJgV',
       redirectUri: 'http://localhost:4200/callback',
-      responseType: 'token',
-      scope: 'openid profile email user_id'
+      audience: `https://adri-oauth-test.auth0.com/api/v2/`,
+      responseType: 'token id_token',
+      scope: 'openid profile email user_id audience read:users'
     });
   }
 
@@ -82,7 +82,8 @@ export class IndexComponent implements OnInit {
     this.webAuth.redirect.loginWithCredentials({
       connection: 'Username-Password-Authentication',
       username: this.login,
-      password: this.password
+      password: this.password,
+      scope: 'openid profile email user_id audience read:users'
     });
 
   }
